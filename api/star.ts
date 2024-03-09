@@ -35,7 +35,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete("/:starID", (req, res) => {
+router.delete("/delete/:starID", (req, res) => {
     const starID = req.params.starID;
     const sql = "DELETE FROM `stars` WHERE `starID` = ?";
     
