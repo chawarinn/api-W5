@@ -38,7 +38,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete("/:personID", (req, res) => {
+router.delete("/delete/:personID", (req, res) => {
     const personID = req.params.personID;
     const sql = "DELETE FROM `person` WHERE `personID` = ?";
     
