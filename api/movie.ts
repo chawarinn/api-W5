@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
     });
   });
 
-  router.delete("/:movieID", (req, res) => {
+  router.delete("/delete/:movieID", (req, res) => {
       const movieID = req.params.movieID;
       const sql = "DELETE FROM `movie` WHERE `movieID` = ?";
       conn.query(sql, [movieID], (err, result) => {
