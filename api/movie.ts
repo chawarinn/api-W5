@@ -1,7 +1,7 @@
 import express from "express";
 import { conn } from "../dbconnect";
 import mysql from "mysql";
-import { Movie} from "../model/movie";
+import { Movie } from "../model/movie";
 
 
 export const router = express.Router();
@@ -14,19 +14,7 @@ router.get("/", (req, res) => {
         return;
       }
       res.json(result);
-    });
-  }); 
-
-  router.get("/movieName", (req, res) => {
-    const movieName = req.query.movieName;
-    let sql = "SELECT movieID FROM movie WHERE movieName LIKE ?";
-    conn.query(sql, ["%" + movieName + "%"], (err, result) => {
-      if (err) {
-        res.status(400).json(err);
-      } else {
-        res.json(result);
-      }
-    });
+    })
   });
   
   router.post("/", (req, res) => {
@@ -59,4 +47,3 @@ router.get("/", (req, res) => {
           }
       });
   });
-  
